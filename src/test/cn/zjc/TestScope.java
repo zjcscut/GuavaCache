@@ -112,5 +112,22 @@ public class TestScope {
         + "s 清除缓存个数:" + stats.evictionCount() + " 命中率:" + new DecimalFormat("#.##").format(stats.hitRate()));
     }
 
+    @Test
+    public void TestStr(){
+        String address = "xxx省zzz市";
+         address = address.substring(address.lastIndexOf("省") <= 0 ? 0 : address.lastIndexOf("省") + 1,
+                address.indexOf("市") <= 0 ? 0 : address.indexOf("市")).trim();
+
+        System.out.println(address);
+    }
+
+    @Test
+    public void TestEnum(){
+        System.out.println(DataBases.MYSQL);
+        System.out.println(DataBases.MYSQL.name());
+    }
+
+
+
 
 }
